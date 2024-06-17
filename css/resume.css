@@ -1,0 +1,640 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #060003;
+  --gray: #242123;
+  --white: #ffffff;
+  --blue: #8e6eea;
+  --border-gradient: linear-gradient(
+    227.58deg,
+    #f4492f -44.04%,
+    #f367a5 42.36%,
+    #553deb 113.95%
+  );
+
+  --font-96: clamp(56px, 8vw, 96px);
+  --font-40: clamp(24px, 6vw, 40px);
+  --font-32: clamp(24px, 4vw, 32px);
+}
+
+html {
+  font-family: "Inter";
+  color: var(--white);
+
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--black);
+}
+
+/* TYPOGRAPHY */
+h1 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: var(--font-96);
+  line-height: 116px;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: var(--font-32);
+  line-height: 150%;
+  margin-bottom: 30px;
+}
+
+p,
+a {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  text-decoration: none;
+}
+
+p {
+  opacity: 0.7;
+}
+
+/* LAYOUTS */
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: center; /* Center children */
+  position: relative; /* Needed for absolute positioning of children */
+  width: 100%; /* Ensure it spans the full width */
+}
+
+/* === UNIVERSAL STYLES === */
+
+/* List */
+
+.flex-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.flex-list li {
+  margin: 12px;
+  transition: 250ms ease all;
+}
+
+.flex-list li a {
+  color: var(--white);
+  text-decoration: none;
+  opacity: 1;
+
+  display: block;
+  transition: 250ms ease all;
+}
+
+.list-items-circle li a {
+  border: 2px solid var(--black);
+  border-radius: 50%;
+}
+
+.list-items-circle li a:hover {
+  background-color: var(--white);
+  border: 2px solid var(--white);
+}
+
+.list-items-circle li a .fab {
+  width: 80px;
+  height: 80px;
+  font-size: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+
+  transition: 250ms ease all;
+}
+
+.list-items-circle li a:hover .fab {
+  color: var(--black);
+}
+
+.contact .list-items-circle li a {
+  border: 2px solid var(--white);
+}
+
+.contact .list-items-circle li a:hover {
+  background-color: var(--white);
+  border: 2px solid var(--white);
+}
+
+.flex-list hr {
+  height: 30px;
+  margin: 0 50px;
+}
+
+/* Profile Image */
+
+.profile-container {
+  min-width: 88px;
+  width: 88px;
+  height: 88px;
+  margin: 12px;
+  position: relative;
+}
+
+.profile-container .profile {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.profile-container .ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header,
+.section {
+  min-height: 850px;
+  padding: 110px;
+}
+
+/* HEADER */
+
+.header {
+  background-image: url("../img/Background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.header .header-links,
+.contact .contact-links,
+.header h1 {
+  color: var(--white);
+  margin-bottom: 45px;
+}
+
+.smaller-text {
+  font-size: 0.9em; /* Adjust this value to your liking */
+}
+
+.header .flex-list {
+  color: var(--white);
+}
+
+.header .flex-list li a {
+  color: var(--white);
+}
+
+.header .flex-list li:hover,
+.header .flex-list li a:hover {
+  color: var(--white);
+}
+
+.header .flex-list hr {
+  border: 1px solid var(--white);
+}
+
+/* === ABOUT === */
+
+.about {
+  background-image: url("../img/Vector.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.about h2 {
+  max-width: 900px;
+  font-weight: 400;
+  font-size: var(--font-40);
+  line-height: 150%;
+
+  margin-bottom: 180px;
+}
+
+.about .achievements {
+  list-style: none;
+}
+
+.about .achievements li {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.about .achievements li .achievement-image {
+  width: 400px; /* Adjust the width as needed */
+  height: auto;
+  margin-right: 10px;
+}
+
+.about .achievements li span {
+  font-size: 20px; /* Adjust the font size as needed */
+}
+
+.certificate-description {
+  text-align: center;
+  margin-top: 10px; /* Adjust the margin as needed */
+}
+
+.certificate-description span,
+.certificate-description .download-link {
+  display: block; /* Makes each element take the full width, stacking them vertically */
+  color: #cccccc; /* Light gray color for better visibility on dark backgrounds */
+  text-decoration: none; /* Removes the underline to clean up the appearance */
+}
+
+.certificate-description .download-link {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Slight white background for contrast */
+  padding: 5px 10px; /* Adds some padding around the text */
+  border-radius: 5px; /* Rounds the corners for a softer look */
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.certificate-description .download-link:hover {
+  color: #ffffff; /* Brighter color on hover for better interaction feedback */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.2
+  ); /* Slightly darker background on hover */
+}
+
+/* === PROJECTS === */
+
+.project-title {
+  text-align: center; /* Center the text */
+  width: 100%; /* Ensure it spans the full width of its container */
+  margin: 0 auto; /* Center the element within its container */
+  font-size: 4em;
+}
+
+.projects .projects-link {
+  color: var(--white);
+  margin-bottom: 30px;
+
+  opacity: 0.7;
+  transition: 250ms ease all;
+}
+
+.project-title-wrapper {
+  text-align: center; /* Center the title text */
+  padding: 20px; /* Add some space around the title */
+  margin-bottom: 20px; /* Space below the title, before the next content */
+}
+
+.projects-link {
+  position: absolute;
+  right: 0; /* Align to the right */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust for exact vertical centering */
+  color: var(--white); /* Assuming you have a white color variable */
+  background-color: #553dab; /* A contrasting background color */
+  padding: 8px 16px; /* Add some padding around the text */
+  border-radius: 4px; /* Rounded corners for a button-like appearance */
+  font-weight: bold; /* Make the text bolder */
+  font-size: 1.1em; /* Slightly larger text */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+  transition:
+    background-color 250ms ease,
+    color 250ms ease; /* Smooth transitions */
+}
+
+.projects-link:hover {
+  background-color: #6841de; /* Brighter or different color on hover */
+  color: #ffffff; /* Change text color on hover for contrast */
+  text-decoration: none; /* Optional: Remove underline on hover */
+}
+
+.project-feature {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+}
+
+.video-container {
+  flex: 1;
+  max-width: 600px;
+  border: 2px solid #ffffff;
+  box-sizing: border-box;
+}
+
+.video-container iframe {
+  margin-top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.projects .card {
+  flex: 1;
+  margin-top: 0;
+  border: 1px solid var(--gray);
+  max-width: 600px;
+  padding: 30px;
+  margin: 0;
+}
+
+.projects .card img {
+  width: 100%;
+  max-width: 425px; /* Increased from 325px */
+  height: auto;
+  margin: 0 auto 16px;
+}
+
+.projects .card .card-title {
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 150%;
+  margin-bottom: 8px;
+}
+
+.projects .card .card-description {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+.projects .card .card-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.projects .card .card-buttons .card-button--site,
+.projects .card .card-buttons .card-button--code {
+  width: 150px;
+  height: 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 1;
+  color: var(--white);
+
+  transition: 250ms ease all;
+}
+
+.projects .card .card-buttons .card-button--site {
+  background-color: var(--gray);
+}
+
+.projects .card .card-buttons .card-button--code {
+  border: 1px solid var(--gray);
+}
+
+.projects .card .card-buttons .card-button--site:hover,
+.projects .card .card-buttons .card-button--code:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+/* === EXPERIENCE === */
+
+.experience-description {
+  max-width: 900px;
+  margin-bottom: 125px;
+
+  font-weight: 400;
+  font-size: var(--font-32);
+  line-height: 150%;
+
+  opacity: 1;
+  position: relative;
+}
+
+.experience-description img {
+  position: absolute;
+  top: 50%;
+  right: -200px;
+  transform: translate(-50%, -50%);
+
+  pointer-events: none;
+}
+
+.experience h2 {
+  border-left: 2px solid var(--white);
+  padding-left: 24px;
+}
+
+.experience .experience-cards {
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.experience .experience-card {
+  width: 370px;
+  padding: 0 30px 30px 0;
+}
+
+.experience .experience-card .card-title {
+  font-size: 18px;
+  line-height: 150%;
+}
+
+.experience .experience-card .card-title .highlight {
+  opacity: 0.7;
+  font-weight: 400;
+}
+
+.experience .experience-card .card-years {
+  color: var(--blue);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+  margin-bottom: 24px;
+  opacity: 1;
+}
+
+.experience .experience-card .card-list .card-list-item {
+  margin: 0 0 16px 16px;
+  opacity: 0.7;
+}
+
+/* === SKILLS === */
+
+.skills {
+  background-image: url("../img/Vector.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+.skills h2 {
+  font-size: var(--font-40);
+  margin-bottom: 60px;
+}
+
+.skills .skill-cards {
+  flex-wrap: wrap;
+}
+
+.skills .skill-card {
+  background-image: url("../img/Background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #060003;
+  background-blend-mode: darken;
+  width: 170px;
+  height: 170px;
+  margin: 0 30px 30px 0;
+  border: 1px solid var(--gray);
+
+  cursor: pointer;
+
+  transition: 500ms ease all;
+}
+
+.skills .skill-card .fab {
+  font-size: 80px;
+  opacity: 0.7;
+  transition: 500ms ease all;
+}
+
+.skill-logo {
+  max-width: 100px; /* Adjust the width as needed */
+  max-height: 100px; /* Adjust the height as needed */
+  width: auto;
+  height: auto;
+}
+#tailwind-logo {
+  filter: brightness(0.7); /* Decreases brightness to 80% of the original */
+}
+
+#hardhat-logo {
+  filter: grayscale(100%) brightness(60%) contrast(90%);
+}
+
+.skills .skill-card:hover {
+  background-blend-mode: normal;
+}
+
+.skills .skill-card:hover .fab {
+  opacity: 1;
+}
+
+.skills .skill-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 30px; /* Adjust the margin-top value to reduce the space */
+  padding: 0 20px;
+}
+
+.skills .skill-list li {
+  display: flex;
+  align-items: center;
+}
+
+.skills .skill-item {
+  display: flex;
+  align-items: center;
+}
+
+.skills .skill-item img {
+  margin-right: 10px;
+}
+
+.skills .skill-item span {
+  font-size: 24px;
+}
+
+/* === CONTACT === */
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.contact h1,
+.contact p {
+  max-width: 750px;
+  margin-bottom: 45px;
+}
+
+.contact .flex-list li:hover,
+.contact .flex-list li a:hover {
+  color: var(--blue);
+}
+
+/* === FOOTER === */
+
+.footer {
+  min-height: 88px;
+  background-color: var(--gray);
+}
+
+/* === MEDIA STYLES === */
+
+@media all and (max-width: 1200px) {
+  .contact-details {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .contact-details li {
+    margin: 10px;
+  }
+
+  .contact-details li a {
+    margin: 0;
+  }
+
+  .contact-details hr {
+    display: none;
+  }
+}
+
+@media all and (max-width: 992px) {
+  .skills .skill-card {
+    width: 125px;
+    height: 125px;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .header,
+  .section {
+    padding: 40px;
+  }
+}
