@@ -75,12 +75,10 @@ p {
 
 .flex-between {
   display: flex;
-  justify-content: center; /* Center children */
-  position: relative; /* Needed for absolute positioning of children */
-  width: 100%; /* Ensure it spans the full width */
+  justify-content: center;
+  position: relative;
+  width: 100%;
 }
-
-/* === UNIVERSAL STYLES === */
 
 /* List */
 
@@ -202,7 +200,7 @@ p {
 }
 
 .smaller-text {
-  font-size: 0.9em; /* Adjust this value to your liking */
+  font-size: 0.9em;
 }
 
 .header .flex-list {
@@ -251,57 +249,45 @@ p {
 }
 
 .about .achievements li .achievement-image {
-  width: 400px; /* Adjust the width as needed */
+  width: 400px;
   height: auto;
   margin-right: 10px;
 }
 
 .about .achievements li span {
-  font-size: 20px; /* Adjust the font size as needed */
+  font-size: 20px;
 }
 
 .certificate-description {
   text-align: center;
-  margin-top: 10px; /* Adjust the margin as needed */
+  margin-top: 10px;
 }
 
 .certificate-description span,
 .certificate-description .download-link {
-  display: block; /* Makes each element take the full width, stacking them vertically */
-  color: #cccccc; /* Light gray color for better visibility on dark backgrounds */
-  text-decoration: none; /* Removes the underline to clean up the appearance */
+  display: block;
+  color: #cccccc;
+  text-decoration: none;
 }
 
 .certificate-description .download-link {
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.1
-  ); /* Slight white background for contrast */
-  padding: 5px 10px; /* Adds some padding around the text */
-  border-radius: 5px; /* Rounds the corners for a softer look */
-  transition:
-    color 0.3s ease,
-    background-color 0.3s ease; /* Smooth transition for hover effects */
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .certificate-description .download-link:hover {
-  color: #ffffff; /* Brighter color on hover for better interaction feedback */
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.2
-  ); /* Slightly darker background on hover */
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* === PROJECTS === */
 
 .project-title {
-  text-align: center; /* Center the text */
-  width: 100%; /* Ensure it spans the full width of its container */
-  margin: 0 auto; /* Center the element within its container */
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
   font-size: 4em;
 }
 
@@ -314,32 +300,30 @@ p {
 }
 
 .project-title-wrapper {
-  text-align: center; /* Center the title text */
-  padding: 20px; /* Add some space around the title */
-  margin-bottom: 20px; /* Space below the title, before the next content */
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
 .projects-link {
   position: absolute;
-  right: 0; /* Align to the right */
-  top: 50%; /* Center vertically */
-  transform: translateY(-50%); /* Adjust for exact vertical centering */
-  color: var(--white); /* Assuming you have a white color variable */
-  background-color: #553dab; /* A contrasting background color */
-  padding: 8px 16px; /* Add some padding around the text */
-  border-radius: 4px; /* Rounded corners for a button-like appearance */
-  font-weight: bold; /* Make the text bolder */
-  font-size: 1.1em; /* Slightly larger text */
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
-  transition:
-    background-color 250ms ease,
-    color 250ms ease; /* Smooth transitions */
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--white);
+  background-color: #553dab;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 1.1em;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 250ms ease, color 250ms ease;
 }
 
 .projects-link:hover {
-  background-color: #6841de; /* Brighter or different color on hover */
-  color: #ffffff; /* Change text color on hover for contrast */
-  text-decoration: none; /* Optional: Remove underline on hover */
+  background-color: #6841de;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .project-feature {
@@ -529,13 +513,14 @@ p {
 }
 
 .skill-logo {
-  max-width: 100px; /* Adjust the width as needed */
-  max-height: 100px; /* Adjust the height as needed */
+  max-width: 100px;
+  max-height: 100px;
   width: auto;
   height: auto;
 }
+
 #tailwind-logo {
-  filter: brightness(0.7); /* Decreases brightness to 80% of the original */
+  filter: brightness(0.7);
 }
 
 #hardhat-logo {
@@ -552,29 +537,40 @@ p {
 
 .skills .skill-list {
   list-style: none;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  margin-top: 30px; /* Adjust the margin-top value to reduce the space */
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 30px;
   padding: 0 20px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .skills .skill-list li {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .skills .skill-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  width: 100%;
 }
 
 .skills .skill-item img {
-  margin-right: 10px;
+  margin-right: 15px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
 }
 
 .skills .skill-item span {
   font-size: 24px;
+  line-height: 1.3;
+  flex: 1;
 }
 
 /* === CONTACT === */
